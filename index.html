@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Temporizador estilo pomodoro">
+    <title>FocusTimer</title>
+
+    <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-svg">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="./src/main.js" defer></script>
+</head>
+<body>
+    <div id="app">
+        <button id="toggle-mode">
+            <span class="sr-only">activate light mode</span>
+            <i class="ph-bold ph-sun"></i>
+            <i class="ph-bold ph-moon"></i>
+        </button>
+        <section id="timer" class="flex">
+            <span id="minutes">25</span>
+            <span>:</span>
+            <span id="seconds">00</span>
+        </section>
+
+        <section id="controls" class="flex">
+            <button data-action="toggleRunning" class="ph ph-play-circle">
+                <span class="sr-only">Start counter</span>
+            </button>
+            <button data-action="toggleRunning" class="ph ph-pause-circle">
+                <span class="sr-only">Pause counter</span>
+            </button>
+            <button data-action="set" class="ph ph-timer secondary">
+                <span class="sr-only">adjust counter</span>
+            </button>
+            <button data-action="reset" class="ph ph-stop-circle secondary">
+                <span class="sr-only">reset counter</span>
+            </button>
+            <button id="mute-off-button" data-action="toggleMute" class="ph ph-speaker-none secondary">
+                <span class="sr-only">Mute music</span>
+            </button>
+            <button id="mute-on-button" data-action="toggleMute" class="ph ph-speaker-high" style="display: none;">
+                <span class="sr-only">Unmute music</span>
+            </button>
+            <button id="increment-minute" data-action="incrementMinute" class="ph ph-plus-circle">
+                <span class="sr-only">Increment 1 minute</span>
+            </button>
+            <button id="decrement-minute" data-action="decrementMinute" class="ph ph-minus-circle">
+                <span class="sr-only">Decrement 1 minute</span>
+            </button>
+        </section>
+
+        <section id="cards">
+            <button id="forest-button" class="card">
+                <i class="ph ph-tree-evergreen"></i>
+                <audio id="audio-forest" src="./assets/Floresta.wav" loop="true"></audio>
+            </button>
+            <button id="rain-button" class="card">
+                <i class="ph ph-cloud-rain"></i>
+                <audio id="audio-rain" src="./assets/Chuva.wav" loop="true"></audio>
+            </button> 
+            <button id="cafe-button" class="card">
+                <i class="ph ph-coffee"></i>
+                <audio id="audio-cafe" src="./assets/Cafeteria.wav" loop="true"></audio>
+            </button>
+            <button id="fireplace-button" class="card">
+                <i class="ph ph-fire"></i>
+                <audio id="audio-fireplace" src="./assets/Lareira.wav" loop="true"></audio>
+            </button>
+        </section>
+
+    </div>
+
+
+</body>
+</html>
